@@ -101,22 +101,29 @@
                if(isset($_FILES['image']['name']))
                {
                     $image_name = $_FILES['image']['name'];
-                    //rename
-                    $ext = end(explode('.', $image_name));
 
-                    $image_name="Food_Category_".rand(000,999).'.'.$ext;
-
-                    $source_path = $_FILES['image']['tmp_name'];
-                    $destination_path = "../images/category/".$image_name;
-                    $upload = move_uploaded_file($source_path, $destination_path);
-
-                    //check
-
-                    if($upload==false)
+                    //upload image if it selected
+                    if($image_name != "")
                     {
-                        $_SESSION['upload'] ="<div class='error'<Failed to Upload Image.</div>";
-                        die();
+                        //rename
+                        $ext = end(explode('.', $image_name));
+
+                        $image_name="Food_Category_".rand(000,999).'.'.$ext;
+
+                        $source_path = $_FILES['image']['tmp_name'];
+                        $destination_path = "../images/category/".$image_name;
+                        $upload = move_uploaded_file($source_path, $destination_path);
+
+                        //check
+
+                        if($upload==false)
+                        {
+                            $_SESSION['upload'] ="<div class='error'<Failed to Upload Image.</div>";
+                            header('location:'.SITEURL.'admin/manage-category.php');
+                            die();
+                        }
                     }
+                    
                }
                else
                {
