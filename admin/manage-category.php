@@ -91,7 +91,7 @@
                                         {
                                             //display the image
                                             ?>
-                                            <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>">
+                                            <img width="250px" src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>">
                                             <?php
                                         }
                                         else
