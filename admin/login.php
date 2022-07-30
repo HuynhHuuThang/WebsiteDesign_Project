@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="login">
-            <h1 class="text-center">login</h1>
+            <h1 class="text-center">Admin Login</h1>
             <br><br>
 
             <?php
@@ -26,14 +26,14 @@
             <!-- login form start here -->
             <form action="" method="POST" class="text-center">
                 Username: <br>
-                <input type="text" name="username" placeholder="enter username"><br><br>
+                <input type="text" name="username" placeholder="Enter Username"><br><br>
                 Password:  <br>
-                <input type="password" name="password" placeholder="enter password"><br><br>
+                <input type="password" name="password" placeholder="Enter Password"><br><br>
                 <input type="submit" name="submit" value="Login" class="btn-primary">
             </form>
             <br><br>
             <!-- login form end here -->
-            <p class="text-center">create By - <a href="#">UIT STUDENT</a></p>
+            <p class="text-center">Create By - <a href="#">UIT STUDENT</a></p>
         </div>
     </body>
 </html>
