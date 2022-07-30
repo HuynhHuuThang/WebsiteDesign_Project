@@ -82,11 +82,7 @@
             echo "<div class='error'>Food not Added.</div>";
           } 
         ?>
-           
-
             <div class="clearfix"></div>
-
-            
 
         </div>
 
