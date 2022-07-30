@@ -2,7 +2,7 @@
 <html>
     <head>
         <title> Login - Food Order System</title>
-        <link rel="stylesheet" href="../css/admin.css">
+        <link rel="stylesheet" href="../css/login.css">
     </head>
     <body>
         <div class="login">
@@ -33,7 +33,7 @@
             </form>
             <br><br>
             <!-- login form end here -->
-            <p class="text-center">create By - <a href="#">hihi</a></p>
+            <p class="text-center">create By - <a href="#">UIT STUDENT</a></p>
         </div>
     </body>
 </html>
