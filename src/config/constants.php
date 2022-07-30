@@ -2,10 +2,10 @@
         //start sessions
         session_start();
         
-        define('SITEURL','http://localhost/web/');
+        define('SITEURL','http://localhost/');
         define('LOCALHOST','localhost');
         define('DB_USERNAME','root');
-        define('DB_PASSWORD','');
+        define('DB_PASSWORD','123');
         define('DB_NAME','food-order');
         // create constants to store non repeating values
         $conn = mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD) or die (mysqli_error()); // Database connection
