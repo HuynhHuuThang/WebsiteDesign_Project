@@ -1,33 +1,40 @@
 version: '3.8'
-
 services:
-  php:
-    build: 
-        context: .
-        dockerfile: Dockerfile
-    environment:
-      MYSQL_DBHOST: "localhost"
-      MYSQL_DBUSER: "root"
-      MYSQL_DBPASS: "123"
-      MYSQL_DBNAME: "food-order"
-    ports:
-      - 3000:3000
+    php-apache-environment:
+        container_name: php-apache
+        build:
+            context: ./php-apache2
+            dockerfile: Dockerfile
+        depends_on:
+          - db
+        volumes:
+            - ./sources/:/var/www/html/
+        environment:
+              - ALLOW_OVERRIDE=true
+        ports:
+            - 8000:80
+        links:
+            - db
 
-    
-      
-  db:
+            
+    db:
+        container_name: db
         image: mysql
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: "123"
-            MYSQL_DBNAME: "food-order"
-            MYSQL_DBPASS: "123"
-            MYSQL_DBHOST: "localhost"
-            MYSQL_DBUSER: "admin"
-  adminer:
-        image: adminer
-        restart: always
+            MYSQL_DATABASE: food-order
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: uit
         ports:
-            - 8080:8080
-volumes: 
-    sqlData:
+            - "9906:3306"
+        volumes: 
+            - ./sources/food-order.sql:/docker-entrypoint-initdb.d/dump.sql
+
+    adminer:
+      image: adminer
+      restart: always
+      ports:
+        - 8080:8080
+
+
