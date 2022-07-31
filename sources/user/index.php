@@ -1,4 +1,4 @@
-    <?php include('partials-front/menu.php')?>
+<?php include('menu.php')?>
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
         <div class="container">
@@ -155,4 +155,4 @@
     </section>
     <!-- fOOD Menu Section Ends Here -->
 
-    <?php include('partials-front/footer.php')?>
+    <?php include('../partials-front/footer.php')?>

@@ -1,4 +1,5 @@
 <?php include('config/constants.php')?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +14,14 @@
 
 <body>
     <!-- Navbar Section Starts Here -->
+    <?php
+        if (isset($_SESSION['user-login']))
+        {
+            echo $_SESSION['user-login'];
+            unset ($_SESSION['user-login']);
+        }
+        ?>
+
     <section class="navbar">
         <div class="container">
             <div class="logo">
@@ -33,7 +42,10 @@
                         <a href="<?php echo SITEURL; ?>foods.php">Foods</a>
                     </li>
                     <li>
-                        <a href="<?php echo SITEURL; ?>admin/login.php">Login</a>
+                        <a href="<?php echo SITEURL; ?>admin/login.php">Admin Login</a>
+                    </li>
+                    <li>
+                    <a href="<?php echo SITEURL; ?>user/user-login.php">User Login</a>
                     </li>
                 </ul>
             </div>
