@@ -29,7 +29,7 @@ services:
         ports:
             - "9906:3306"
         volumes: 
-            - ./sources/food-order.sql:/docker-entrypoint-initdb.d/dump.sql
+            - ./sources/view/food-order.sql:/docker-entrypoint-initdb.d/dump.sql
 
     adminer:
       image: adminer
